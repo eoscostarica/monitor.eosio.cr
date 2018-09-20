@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EOS Costa Rica Infrastructure Monitor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/stack-interface.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/socicon.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/iconsmind.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/stack-interface.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css?14">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/utils.js?08"></script>
+    <script src="config.js?13"></script>
+    <script src="js/check_nodes.js?08"></script>
+</head>
+<body>
+        <div class="page">
+        <center>
+        	<br/>
+           <img src="/img/eoscolors-transparent.png" width="300px" alt="EOS Costa Rica" /> <h2>EOS Mainnet Info</h2>
+        <div class="container">
+            <div class="mainInfo">
+
+                <div class="row">
+                    
+                    <div class="col-md">
+                        <nobr> Last Block: <span class="green" id="lastBlock">--</span></nobr>
+                    </div>
+                    <div class="col-md-1 hidesm">
+
+                    </div>
+                    <div class="col-md">
+                        <nobr> Produced by: <span class="green" id="lastProducer">--</span>  </nobr>
+                    </div>
+                    <div class="col-md-10 hidesm">
+
+                    </div>
+                    <div class="col-md">
+                        <nobr> Irreversible block: <span class="green" id="lastIrrevBlock">--</span> </nobr>
+                    </div>
+                    <div class="col-md-1 hidesm">
+
+                    </div>
+                    <div class="col-md">
+                        <nobr> Date: <span class="green" id="lastDate">--</span></nobr>
+                    </div>
+
+                </div>
+                <!--
+                <nobr> Last Block: <span class="green" id="lastBlock">--</span> <span class="dot">&#9899;</span> </nobr>
+                <nobr> Produced by: <span class="green" id="lastProducer">--</span>  </nobr> <BR>
+                <nobr> Last irreversible block: <span class="green" id="lastIrrevBlock">--</span> <span class="dot">&#9899;</span> </nobr>
+                <nobr> Date: <span class="green" id="lastDate">--</span></nobr>
+                -->
+            </div>
+
+
+            <!--div class="row s1">
+                <div class="col-sm text-right">
+                Last Block: <span class="green" id="lastBlock">--</span> <BR>
+                Produced by: <span class="green" id="lastProducer">--</span>
+                </div>
+                <div class="col-sm-2">
+                </div>
+                <div class="col-sm  text-left">
+                Last irreversible block: <span class="green" id="lastIrrevBlock">--</span>
+                <BR>
+                Date: <span class="green" id="lastDate">--</span>
+                </div>
+            </div-->
+
+
+
+            <BR><BR>
+            <h2>EOS Costa Rica Network Status</h2>
+            <div id="nodesList"></div>
+
+
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+
+                    <div class="table-responsive-sm vscroll">
+                        <table class="table table-hover table-sm" id="bpTable">
+                            <thead>
+                                <tr class="text-center tblheader">
+                                    <th scope="col">#</th>
+                                    <th scope="col" width="100">Node name</th>
+                                    <th scope="col">Answered</th>
+                                    <th scope="col">Block</th>
+                                    <th scope="col">Produced</th>
+                                    <th scope="col">Block</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">HTTP</th>
+                                    <th scope="col">P2P</th>
+                                    <th scope="col">Version</th>
+                                    <th scope="col">Organisation</th>
+                                    <th scope="col">Location</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="https://prtg.crservers.com/chart.png?type=graph&width=1200&height=300&graphid=2&id=5000&username=eoscr&passhash=1852700894" alt="server bandwidth"  />
+        </center>
+        </div>
+
+    <script src="js/parallax.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/twitterfetcher.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>t
